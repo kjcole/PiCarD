@@ -15,4 +15,4 @@ Development will PROBABLY be with [Kivy Pie](http://kivypie.mitako.eu/) as
 the base, since the project lead entertains fantasies of controlling it
 remotely from a phone as well.
 
-This is mjsir911's fork of the project
+mjsir911(student) is now a project contributor.
