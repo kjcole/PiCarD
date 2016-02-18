@@ -16,3 +16,5 @@ the base, since the project lead entertains fantasies of controlling it
 remotely from a phone as well.
 
 mjsir911(student) is now a project contributor.
+
+bobtinin(student) is now a project contributor.
