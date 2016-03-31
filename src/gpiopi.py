@@ -23,32 +23,32 @@ print("Raspberry Pi GPIO module Version {0}".format(GPIO.VERSION))
 
 def leftWinOpen():
     GPIO.output(0, GPIO.HIGH)
-    leftwin = open("./stat/leftwino", "wb")
-    leftwin.write(1)
+    leftwin = open("./stat/leftwin", "w")
+    leftwin.write("o")  # Opening...
     leftwin.close()
 
 
 def leftWinClose():
     GPIO.output(2, GPIO.HIGH)
-    leftwin = open("./stat/leftwinc", "wb")
-    leftwin.write(1)
+    leftwin = open("./stat/leftwin", "w")
+    leftwin.write("c")  # Closing...
     leftwin.close()
 
 
 def leftWinMax():
-    while GPIO.input(3) == GPIO.LOW:
-        sleep(0.001)
-    leftwin = open("./stat/leftwino", "rb")
+#   while GPIO.input(3) == GPIO.LOW:
+#       sleep(0.001)
+    leftwin = open("./stat/leftwin", "r")
     status = leftwin.read()
     leftwin.close()
-    if status:
+    if status == "o":
         GPIO.output(0, GPIO.LOW)
-    leftwin = open("./stat/leftwinc", "rb")
-    status = leftwin.read()
-    leftwin.close()
-    if status:
+        print("Stopping the open")
+    elif status == "c":
         GPIO.output(2, GPIO.LOW)
-    
+        print("Stopping the close")
+    else:
+        print("WTF???")
 
 def rightWinOpen():
     GPIO.output(4, GPIO.HIGH)
