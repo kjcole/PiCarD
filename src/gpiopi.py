@@ -24,14 +24,14 @@ print("Raspberry Pi GPIO module Version {0}".format(GPIO.VERSION))
 def leftWinOpen():
     GPIO.output(0, GPIO.HIGH)
     leftwin = open("./stat/leftwino", "wb")
-    leftwin.write(True)
+    leftwin.write(1)
     leftwin.close()
 
 
 def leftWinClose():
     GPIO.output(2, GPIO.HIGH)
     leftwin = open("./stat/leftwinc", "wb")
-    leftwin.write(True)
+    leftwin.write(1)
     leftwin.close()
 
 
