@@ -22,24 +22,45 @@ GPIO.setup(25, GPIO.IN)
 print("Raspberry Pi GPIO module Version {0}".format(GPIO.VERSION))
 
 def leftWinOpen():
-    pass
+    GPIO.output(0, GPIO.HIGH)
+    leftwin = open("./stat/leftwino", "wb")
+    leftwin.write(True)
+    leftwin.close()
 
 
 def leftWinClose():
-    pass
+    GPIO.output(2, GPIO.HIGH)
+    leftwin = open("./stat/leftwinc", "wb")
+    leftwin.write(True)
+    leftwin.close()
 
+
+def leftWinMax():
+    while GPIO.input(3) == GPIO.LOW:
+        sleep(0.001)
+    leftwin = open("./stat/leftwino", "rb")
+    status = leftwin.read()
+    leftwin.close()
+    if status:
+        GPIO.output(0, GPIO.LOW)
+    leftwin = open("./stat/leftwinc", "rb")
+    status = leftwin.read()
+    leftwin.close()
+    if status:
+        GPIO.output(2, GPIO.LOW)
+    
 
 def rightWinOpen():
-    pass
+    GPIO.output(4, GPIO.HIGH)
 
 
 def rightWinClose():
-    pass
+    GPIO.output(6, GPIO.HIGH)
 
 
 def sunRoofOpen():
-    pass
+    GPIO.output(22, GPIO.HIGH)
 
 
 def sunRoofClose():
-    pass
+    GPIO.output(24, GPIO.HIGH)
