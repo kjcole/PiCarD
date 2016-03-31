@@ -1,19 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-def leftWinOpen
+print("Anti-Raspberry Pi module Version 0.1")
+def leftWinOpen():
+    print("Left Window Opening")
+    
+
+def leftWinClose():
+    print("Left Window Closing")
 
 
-def leftWinClose
+def rightWinOpen():
+    print("Right Window Opening")
 
 
-def rightWinOpen
+def rightWinClose():
+    print("Right Window Closing")
 
 
-def rightWinClose
+def sunRoofOpen():
+    print("Sunroof Opening")
 
 
-def sunRoofOpen
-
-
-def sunRoofClose
+def sunRoofClose():
+    print("Sunroof Closing")
