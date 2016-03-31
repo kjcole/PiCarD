@@ -1,0 +1,11 @@
+!!!ALL GPIO PINS IN BCM!!!
+
+GPIO 0 : Left Window Open OUT
+GPIO 2 : Left Window Close OUT
+GPIO 3 : Left Window Max IN
+GPIO 4 : Right Window Open OUT
+GPIO 6 : Right Window Close OUT
+GPIO 5 : Right Window Max IN
+GPIO 22 : Sunroof Open OUT
+GPIO 24 : Sunroof Close OUT
+GPIO 25 : Sunroof Max IN
