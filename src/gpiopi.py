@@ -25,14 +25,14 @@ print("Raspberry Pi GPIO module Version {0}".format(GPIO.VERSION))
 
 def leftWinOpen():
     GPIO.output(0, GPIO.HIGH)
-    leftwin = open("./stat/leftwin", "w")
+    leftwin = open("./.stat/leftwin", "w")
     leftwin.write("o")  # Opening...
     leftwin.close()
 
 
 def leftWinClose():
     GPIO.output(2, GPIO.HIGH)
-    leftwin = open("./stat/leftwin", "w")
+    leftwin = open("./.stat/leftwin", "w")
     leftwin.write("c")  # Closing...
     leftwin.close()
 
@@ -40,7 +40,7 @@ def leftWinClose():
 def leftWinMax():
    while GPIO.input(3) == GPIO.LOW:
        sleep(0.001)
-    leftwin = open("./stat/leftwin", "r")
+    leftwin = open("./.stat/leftwin", "r")
     status = leftwin.read()
     leftwin.close()
     if status == "o":
@@ -52,14 +52,14 @@ def leftWinMax():
 
 def rightWinOpen():
     GPIO.output(4, GPIO.HIGH)
-    rightwin = open("./stat/rightwin", "w")
+    rightwin = open("./.stat/rightwin", "w")
     rightwin.write("o")  # Opening...
     rightwin.close()
 
 
 def rightWinClose():
     GPIO.output(6, GPIO.HIGH)
-    rightwin = open("./stat/rightwin", "w")
+    rightwin = open("./.stat/rightwin", "w")
     rightwin.write("o")  # Opening...
     rightwin.close()
 
@@ -67,7 +67,7 @@ def rightWinClose():
 def rightWinMax():
    while GPIO.input(5) == GPIO.LOW:
        sleep(0.001)
-    rightwin = open("./stat/rightwin", "r")
+    rightwin = open("./.stat/rightwin", "r")
     status = rightwin.read()
     rightwin.close()
     if status == "o":
@@ -80,14 +80,14 @@ def rightWinMax():
 
 def sunRoofOpen():
     GPIO.output(22, GPIO.HIGH)
-    sunroof = open("./stat/sunroof", "w")
+    sunroof = open("./.stat/sunroof", "w")
     sunroof.write("o")  # Opening...
     sunroof.close()
 
 
 def sunRoofClose():
     GPIO.output(24, GPIO.HIGH)
-    sunroof = open("./stat/sunroof", "w")
+    sunroof = open("./.stat/sunroof", "w")
     sunroof.write("o")  # Opening...
     sunroof.close()
 
@@ -95,7 +95,7 @@ def sunRoofClose():
 def sunRoofMax():
    while GPIO.input(25) == GPIO.LOW:
        sleep(0.001)
-    sunroof = open("./stat/sunroof", "r")
+    sunroof = open("./.stat/sunroof", "r")
     status = sunroof.read()
     sunroof.close()
     if status == "o":
