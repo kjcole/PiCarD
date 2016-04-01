@@ -17,7 +17,7 @@ def leftWinClose():
 
 
 def leftWinMax():
-    raw_input("Press enter to simulate window hitting maximum")
+    input("Press enter to simulate window hitting maximum")
     leftwin = open("./stat/leftwin", "r")
     status = leftwin.read()
     leftwin.close()
@@ -44,7 +44,7 @@ def rightWinClose():
 
 
 def rightWinMax():
-    raw_input("Press enter to simulate window hitting maximum")
+    input("Press enter to simulate window hitting maximum")
     rightwin = open("./stat/rightwin", "r")
     status = rightwin.read()
     rightwin.close()
@@ -71,7 +71,7 @@ def sunRoofClose():
 
 
 def sunRoofMax():
-    raw_input("Press enter to simulate window hitting maximum")
+    input("Press enter to simulate window hitting maximum")
     sunroof = open("./stat/sunroof", "r")
     status = sunroof.read()
     sunroof.close()
