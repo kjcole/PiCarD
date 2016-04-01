@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
+from sleep import time
+
 try:
     import RPi.GPIO as GPIO
 except ImportError:
