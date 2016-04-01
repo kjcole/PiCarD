@@ -35,10 +35,10 @@ class Dashboard(QDialog, gui.Ui_Dashboard):
 
 
     def rightWinButton(self):
+        pass
 
-    
     def sunRoofButton(self):
-
+        pass
 
 def main():
     app = QApplication(sys.argv)
