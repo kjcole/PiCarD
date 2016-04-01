@@ -13,6 +13,22 @@ class Dashboard(QDialog, gui.Ui_Dashboard):
         """Construct a Dialog window and fill with widgets"""
         super(Dashboard, self).__init__(parent) 
         self.setupUi(self)
+    
+    def leftWinButton(self):
+        #Add function like this "x=(x+1)%2"
+        leftwin = open("./stat/leftwin", "r")
+        status = leftwin.read()
+        leftwin.close()
+        if status == "o":
+            leftWinClose()
+            #Code to grey out button goes here
+
+
+    def rightWinButton(self):
+
+    
+    def sunRoofButton(self):
+
 
 def main():
     app = QApplication(sys.argv)
