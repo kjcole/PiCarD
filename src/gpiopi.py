@@ -36,17 +36,15 @@ def leftWinClose():
 
 
 def leftWinMax():
-#   while GPIO.input(3) == GPIO.LOW:
-#       sleep(0.001)
+   while GPIO.input(3) == GPIO.LOW:
+       sleep(0.001)
     leftwin = open("./stat/leftwin", "r")
     status = leftwin.read()
     leftwin.close()
     if status == "o":
         GPIO.output(0, GPIO.LOW)
-        print("Stopping the open")
     elif status == "c":
         GPIO.output(2, GPIO.LOW)
-        print("Stopping the close")
     else:
         print("WTF???")
 
