@@ -50,15 +50,55 @@ def leftWinMax():
 
 def rightWinOpen():
     GPIO.output(4, GPIO.HIGH)
+    rightwin = open("./stat/rightwin", "w")
+    rightwin.write("o")  # Opening...
+    rightwin.close()
 
 
 def rightWinClose():
     GPIO.output(6, GPIO.HIGH)
+    rightwin = open("./stat/rightwin", "w")
+    rightwin.write("o")  # Opening...
+    rightwin.close()
+
+
+def rightWinMax():
+   while GPIO.input(5) == GPIO.LOW:
+       sleep(0.001)
+    rightwin = open("./stat/rightwin", "r")
+    status = rightwin.read()
+    rightwin.close()
+    if status == "o":
+        GPIO.output(4, GPIO.LOW)
+    elif status == "c":
+        GPIO.output(6, GPIO.LOW)
+    else:
+        print("WTF???")
 
 
 def sunRoofOpen():
     GPIO.output(22, GPIO.HIGH)
+    sunroof = open("./stat/sunroof", "w")
+    sunroof.write("o")  # Opening...
+    sunroof.close()
 
 
 def sunRoofClose():
     GPIO.output(24, GPIO.HIGH)
+    sunroof = open("./stat/sunroof", "w")
+    sunroof.write("o")  # Opening...
+    sunroof.close()
+
+
+def sunRoofMax():
+   while GPIO.input(25) == GPIO.LOW:
+       sleep(0.001)
+    sunroof = open("./stat/sunroof", "r")
+    status = sunroof.read()
+    sunroof.close()
+    if status == "o":
+        GPIO.output(22, GPIO.LOW)
+    elif status == "c":
+        GPIO.output(24, GPIO.LOW)
+    else:
+        print("WTF???")
