@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from PySide.QtCore import *
-from PySide.Gui import *
+from PySide.QtGui import *
 
 def thread(job):
     workerThread = WorkerThread(len(self.workerThreads) + 1)
