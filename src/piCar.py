@@ -27,17 +27,22 @@ class Dashboard(QDialog, gui.Ui_Dashboard):
         status = leftwin.read()
         leftwin.close()
         if status == "o":
-            print("left window is open")
+            self.leftWinButton.setText("Left window is Closing")
             leftWinClose()
+            self.leftWinButton.setStyleSheet("color: #F0F;")
+            self.leftWinButton.setDisabled(True)
             "Code to grey out button goes here"
             workerThread = WorkerThread(len(self.workerThreads) + 1, leftWinMax)
             self.workerThreads.append(workerThread)
             #self.workerThreads[-1].talk.connect(self.thread.Done)
             self.workerThreads[-1].start()
             "run following code when thread finishes"
+            self.leftWinButton.setText("Close Left Window")
             "sset button to closing instead of opening"
         elif status == "c":
+            self.leftWinButton.setText("Left window is Closing")
             leftWinOpen()
+            self.leftWinButton.setDisabled(True)
             "Code to grey out button goes here"
             workerThread = WorkerThread(len(self.workerThreads) + 1, leftWinMax)
             self.workerThreads.append(workerThread)
