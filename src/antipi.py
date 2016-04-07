@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import sys
+if sys.version_info.major == 2:
+    input = raw_input
+
 print("Anti-Raspberry Pi module Version 0.1")
 def leftWinOpen():
     print("Left Window Opening")
     leftwin = open("./.stat/leftwin", "w")
     leftwin.write("o")  # Opening...
     leftwin.close()
-    
+
 
 def leftWinClose():
     print("Left Window Closing")
