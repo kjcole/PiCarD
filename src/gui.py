@@ -42,9 +42,9 @@ class Ui_Dashboard(object):
         self.rightwinopen = QtGui.QPushButton(self.groupBox)
         self.rightwinopen.setObjectName("rightwinopen")
         self.gridLayout_2.addWidget(self.rightwinopen, 1, 2, 1, 1)
-        self.leftwinopen = QtGui.QPushButton(self.groupBox)
-        self.leftwinopen.setObjectName("leftwinopen")
-        self.gridLayout_2.addWidget(self.leftwinopen, 1, 0, 1, 1)
+        self.leftWinButton = QtGui.QPushButton(self.groupBox)
+        self.leftWinButton.setObjectName("leftWinButton")
+        self.gridLayout_2.addWidget(self.leftWinButton, 1, 0, 1, 1)
 
         self.retranslateUi(Dashboard)
         QtCore.QMetaObject.connectSlotsByName(Dashboard)
@@ -53,5 +53,5 @@ class Ui_Dashboard(object):
         Dashboard.setWindowTitle(QtGui.QApplication.translate("Dashboard", "Dialog", None, QtGui.QApplication.UnicodeUTF8))
         self.sunroofopen.setText(QtGui.QApplication.translate("Dashboard", "Sunroof Open", None, QtGui.QApplication.UnicodeUTF8))
         self.rightwinopen.setText(QtGui.QApplication.translate("Dashboard", "Right Window Open", None, QtGui.QApplication.UnicodeUTF8))
-        self.leftwinopen.setText(QtGui.QApplication.translate("Dashboard", "Left Window Open", None, QtGui.QApplication.UnicodeUTF8))
+        self.leftWinButton.setText(QtGui.QApplication.translate("Dashboard", "Left Window Open", None, QtGui.QApplication.UnicodeUTF8))
 
