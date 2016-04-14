@@ -8,7 +8,8 @@ try:
     import RPi.GPIO as GPIO
 except ImportError:
     print("Not on a Raspberry Pi, use antipi.py for testing purposes")
-    sys.exit(1)
+#    sys.exit(1)
+    import Spoof as GPIO
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(0, GPIO.OUT)
