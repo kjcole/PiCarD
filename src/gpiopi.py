@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from sleep import time
+from time import sleep
 
 try:
     import RPi.GPIO as GPIO
@@ -38,7 +38,7 @@ def leftWinClose():
 
 
 def leftWinMax():
-   while GPIO.input(3) == GPIO.LOW:
+    while GPIO.input(3) == GPIO.LOW:
        sleep(0.001)
     leftwin = open("./.stat/leftwin", "r")
     status = leftwin.read()
@@ -65,7 +65,7 @@ def rightWinClose():
 
 
 def rightWinMax():
-   while GPIO.input(5) == GPIO.LOW:
+    while GPIO.input(5) == GPIO.LOW:
        sleep(0.001)
     rightwin = open("./.stat/rightwin", "r")
     status = rightwin.read()
@@ -93,7 +93,7 @@ def sunRoofClose():
 
 
 def sunRoofMax():
-   while GPIO.input(25) == GPIO.LOW:
+    while GPIO.input(25) == GPIO.LOW:
        sleep(0.001)
     sunroof = open("./.stat/sunroof", "r")
     status = sunroof.read()
