@@ -1,7 +1,7 @@
 from PySide.QtCore import *
 from PySide.QtGui import *
 import sys 
-from gpiopi import * 
+from gpiopi_nomult import * 
 
 def action():
     sunRoofOpen()
