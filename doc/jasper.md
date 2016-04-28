@@ -10,10 +10,12 @@ audio configuration menu. Preferences -> Audio Device Settings. This
 will create ~/.asoundrc.  Copy ~/.asoundrc to /etc/asound.conf and
 reboot.
 
-    $ arecord -D plughw:1,0 -f cd test.wave
-    [talk]
+    $ arecord -D plughw:1,0 -f cd test.wav
+    [talk into the microphone]
 	^C
 	$ aplay test.wav
+
+Playback:  Make sure your Playback is set to Analog!
 
 And... we run into our old friend Python2 vs. Python3... Make sure the
 pip is installing to Python2's library directory.  Try pip2 instead of
