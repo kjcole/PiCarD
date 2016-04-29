@@ -30,3 +30,6 @@ fix that:
     $ gpg --export --armor 8B48AD6246925553 | sudo apt-key add -
     $ gpg --export --armor 7638D0442B90D010 | sudo apt-key add -
 
+Don't forget an occasional:
+
+    $ sudo rpi-update
