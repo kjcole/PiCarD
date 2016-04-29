@@ -20,3 +20,13 @@ Playback:  Make sure your Playback is set to Analog!
 And... we run into our old friend Python2 vs. Python3... Make sure the
 pip is installing to Python2's library directory.  Try pip2 instead of
 merely pip.
+
+When you get a message about unknown public keys, the following will
+fix that:
+
+    $ gpg --recv-key 8B48AD6246925553
+    $ gpg --recv-key 7638D0442B90D010
+
+    $ gpg --export --armor 8B48AD6246925553 | sudo apt-key add -
+    $ gpg --export --armor 7638D0442B90D010 | sudo apt-key add -
+
