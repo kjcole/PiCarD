@@ -10,7 +10,7 @@ from PySide.QtCore import *
 from PySide.QtGui  import *
 
 #import lazythread
-from antipi import * #Use antipi, if not run on the Raspberry Pi
+from windows import *
 import gui as gui #Change first gui to whatever your gui file is named
 
 class Dashboard(QDialog, gui.Ui_Dashboard):

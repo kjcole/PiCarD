@@ -29,7 +29,12 @@ from __future__ import print_function
 from six.moves  import input           # use raw_input when I say input
 from os.path    import expanduser      # Cross-platform home directory finder
 
-import RPi.GPIO as GPIO
+try:
+    import RPi.GPIO as GPIO
+except ImportError:
+#    print("Not on a Raspberry Pi, use antipi.py for testing purposes")
+#    sys.exit(1)
+    import spoof as GPIO
 from time import sleep
 
 __appname__    = "Raspberry Pi GPIO: Pin High Test"
@@ -58,7 +63,7 @@ def main():
             break
         GPIO.setup(pin, GPIO.OUT)    # Pin is now an output pin
         GPIO.output(pin, GPIO.HIGH)  # Set pin high  (on / True / 1)
-        sleep(30)                    # Sleep for thirty seconds
+        sleep(5)                    # Sleep for thirty seconds
         GPIO.output(pin, GPIO.LOW )  # Set pin low  (off / False / 0)
 
 
