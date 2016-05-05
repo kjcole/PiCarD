@@ -7,7 +7,7 @@ from time import sleep
 try:
     import RPi.GPIO as GPIO
 except ImportError:
-    print("Not on a Raspberry Pi, use antipi.py for testing purposes")
+#    print("Not on a Raspberry Pi, use antipi.py for testing purposes")
 #    sys.exit(1)
     import spoof as GPIO
 GPIO.setmode(GPIO.BCM)
