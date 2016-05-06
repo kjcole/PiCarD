@@ -91,6 +91,17 @@ things wired as described above and replace wires and LEDs until
 you have a successful lighting.</p>
 
 <p>Next, </p>
+
+<p>After creating a <strong>.ui</strong> file with Designer, you must convert
+it to a Python file via the command:</p>
+
+<p style="margin:10px;font-family:monospace;"><code>$ pyside-uic
+filename.ui > filename.py</code></p>
+
+<p>If you create a resource file, compile it with </p>
+
+<p style="margin:10px;font-family:monospace;"><code>$ pyside-rcc filename.qrc > filename_rc.py</code></p>
+
    </article>
 
     <footer id="section_footer" role="contentinfo"
