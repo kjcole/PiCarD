@@ -16,6 +16,7 @@ def setmode(mode):
 def setup(pinnum, direction):
     pass
 def output(pinnum, state):
+#    pinnum = state
     exec("pin{0} = {1}".format(pinnum,state), globals())
     print("setting pin",pinnum,"to",state)
 def wait(pinnum):
