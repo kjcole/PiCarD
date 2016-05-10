@@ -32,13 +32,14 @@ pins = {}
 def setmode(numsys):
     global mode, pins
     mode = numsys
+    pins = {}
     for pin in range(40):
         if mode == BCM:
-            pins[pinbcm[pin-1]] = Pin
+            pins[pinbcm[pin-1]] = Pin()
         elif mode == BOARD:
-            pins[pin+1] = Pin
+            pins[pin+1] = Pin()
         else:
-###### For some reason setmode will not work a second time even if everything is reset to defaults ######
+###### For some reason setmode will not work a second time even if everything is reset to defaults ###### ---fixed
             print("something's wrong")
     print("setting mode to", mode)
 
@@ -54,8 +55,8 @@ def output(pinnum, state):
 #        if pins[pin].num == pinnum:
 #            pins[pin].state = state
         pins[pinnum].state = state
-        print("setting {0} pin {1} to {2}")
+        print("setting {0} pin {1} to {2}".format(mode, pinnum, state))
     elif pins[pinnum].dir == IN:
         print("Make sure the pin is on output")
     else:
-        print("404")
+        print("Make sure to set the pin direction with setup(dir)")
