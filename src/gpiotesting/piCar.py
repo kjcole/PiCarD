@@ -10,6 +10,13 @@ from PySide.QtCore import *
 from PySide.QtGui  import *
 
 #import lazythread
+try:
+    import RPi.GPIO as GPIO
+except ImportError:
+#    print("Not on a Raspberry Pi, use antipi.py for testing purposes")
+#    sys.exit(1)
+    import temp as GPIO
+
 from windows import *
 import gui as gui #Change first gui to whatever your gui file is named
 

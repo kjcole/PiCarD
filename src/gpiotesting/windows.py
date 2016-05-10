@@ -9,11 +9,11 @@ try:
 except ImportError:
 #    print("Not on a Raspberry Pi, use antipi.py for testing purposes")
 #    sys.exit(1)
-    import spoof as GPIO
+    import temp as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(0, GPIO.OUT)
+#GPIO.setup(0, GPIO.OUT)
 GPIO.setup(2, GPIO.OUT)
 GPIO.setup(3, GPIO.IN)
 GPIO.setup(4, GPIO.OUT)
@@ -26,7 +26,7 @@ GPIO.setup(25, GPIO.IN)
 print("Raspberry Pi GPIO module Version {0}".format(GPIO.VERSION))
 
 def leftWinOpen():
-    GPIO.output(0, GPIO.HIGH)
+    GPIO.output(17, GPIO.HIGH)
     leftwin = open("./.stat/leftwin", "w")
     leftwin.write("o")  # Opening...
     leftwin.close()

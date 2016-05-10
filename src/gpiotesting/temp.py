@@ -60,3 +60,5 @@ def output(pinnum, state):
         print("Make sure the pin is on output")
     else:
         print("Make sure to set the pin direction with setup(dir)")
+
+input == LOW
