@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3.4
+#!/bin/python2
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function, absolute_import
