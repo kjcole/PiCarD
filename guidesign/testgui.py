@@ -39,16 +39,16 @@ class MainDialog(QDialog, buttonsv1.Ui_Dialog):
         pass
 
     def fronton (self):
-        gpio.output(23, GPIO.HIGH)
+        GPIO.output(23, GPIO.HIGH)
 
     def frontoff (self):
-        gpio.output(23, GPIO.LOW)
+        GPIO.output(23, GPIO.LOW)
 
     def rearon (self):
-        gpio.output(24, GPIO.HIGH)
-        
+        GPIO.output(24, GPIO.HIGH)
+
     def rearoff (self):
-        gpio.output(24, GPIO.LOW)
+        GPIO.output(24, GPIO.LOW)
 
 def main():
     import sys
