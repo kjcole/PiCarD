@@ -24,18 +24,31 @@ class MainDialog(QDialog, buttonsv1.Ui_Dialog):
         self.showFullScreen()
 
         self.setupUi(self)
-        self.Front.clicked.connect(self.buzz)
-        self.Rear.clicked.connect(self.quiet)
+        self.Front.clicked.connect(self.fronton)
+        self.Rear.clicked.connect(self.rearon)
 
-    def buzz (self):
-        while True:
-            GPIO.output(23, GPIO.HIGH)
-            time.sleep(0.0011)
-            GPIO.output(23, GPIO.LOW)
-            time.sleep(0.0011)
+#This only applies to buzzers!
+   # def buzz (self):
+    #    while True:
+     #       GPIO.output(23, GPIO.HIGH)
+      #      time.sleep(0.0011)
+       #     GPIO.output(23, GPIO.LOW)
+        #    time.sleep(0.0011)
 
     def quiet (self):
         pass
+
+    def fronton (self):
+        gpio.output(23, GPIO.HIGH)
+
+    def frontoff (self):
+        gpio.output(23, GPIO.LOW)
+
+    def rearon (self):
+        gpio.output(24, GPIO.HIGH)
+        
+    def rearoff (self):
+        gpio.output(24, GPIO.LOW)
 
 def main():
     import sys
