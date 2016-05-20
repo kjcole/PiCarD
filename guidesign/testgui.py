@@ -9,7 +9,12 @@ from PySide.QtGui  import *
 import time
 import buttonsv1
 
-import RPi.GPIO as GPIO
+try:
+    import RPi.GPIO as GPIO
+except ImportError:
+#    print("Not on a Raspberry Pi, use antipi.py for testing purposes")
+#    sys.exit(1)
+    import temp as GPIO
 
 class MainDialog(QDialog, buttonsv1.Ui_Dialog):
     def __init__(self, parent=None):
