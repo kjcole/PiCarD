@@ -24,8 +24,8 @@ class MainDialog(QDialog, buttonsv1.Ui_Dialog):
         self.showFullScreen()
 
         self.setupUi(self)
-        self.pushButton.clicked.connect(self.buzz)
-        self.pushButton_2.clicked.connect(self.quiet)
+        self.Front.clicked.connect(self.buzz)
+        self.Rear.clicked.connect(self.quiet)
 
     def buzz (self):
         while True:
