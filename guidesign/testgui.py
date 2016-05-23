@@ -54,6 +54,7 @@ def main():
     import sys
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(23, GPIO.OUT)
+    GPIO.setup(24, GPIO.OUT)
     app = QApplication(sys.argv)
     touchscreen = MainDialog()
     touchscreen.show()
