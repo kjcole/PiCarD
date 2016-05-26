@@ -8,7 +8,8 @@ from PySide.QtGui  import *
 
 import time
 import buttonsv1
-
+FRONT = 0
+REAR = 0
 try:
     import RPi.GPIO as GPIO
 except ImportError:
@@ -24,8 +25,8 @@ class MainDialog(QDialog, buttonsv1.Ui_Dialog):
         self.showFullScreen()
 
         self.setupUi(self)
-        self.Front.clicked.connect(self.fronton)
-        self.Rear.clicked.connect(self.rearon)
+        self.Front.clicked.connect(self.fronttoggle)
+        self.Rear.clicked.connect(self.reartoggle)
 
 #This only applies to buzzers!
    # def buzz (self):
@@ -38,17 +39,21 @@ class MainDialog(QDialog, buttonsv1.Ui_Dialog):
     def quiet (self):
         pass
 
-    def fronton (self):
-        GPIO.output(23, GPIO.HIGH)
+    def fronttoggle (self):
+        global FRONT
+        if FRONT == 0:
+            GPIO.output(23, GPIO.HIGH)
+        else:
+            GPIO.output(23, GPIO.LOW)
+        FRONT = (FRONT + 1) % 2
 
-    def frontoff (self):
-        GPIO.output(23, GPIO.LOW)
-
-    def rearon (self):
-        GPIO.output(24, GPIO.HIGH)
-
-    def rearoff (self):
-        GPIO.output(24, GPIO.LOW)
+    def reartoggle (self):
+        global REAR
+        if REAR == 0:
+            GPIO.output(24, GPIO.HIGH)
+        else:
+            GPIO.output(24, GPIO.LOW)
+        REAR = (REAR + 1) % 2
 
 def main():
     import sys
