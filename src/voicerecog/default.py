@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from os import environ, path
 
 from pocketsphinx.pocketsphinx import *
@@ -17,13 +17,14 @@ decoder = Decoder(config)
 # Decode streaming data.
 decoder = Decoder(config)
 decoder.start_utt()
-stream = open(path.join(DATADIR, 'goforward.raw'), 'rb')
+stream = open(path.join(DATADIR, 'hello.raw'), 'rb')
 while True:
   buf = stream.read(1024)
   if buf:
+    print("decoding in progress")
     decoder.process_raw(buf, False, False)
   else:
-#    break
+    break
     print('boop')
 decoder.end_utt()
 print ('Best hypothesis segments: ', [seg.word for seg in decoder.seg()])
