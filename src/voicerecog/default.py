@@ -17,7 +17,7 @@ decoder = Decoder(config)
 # Decode streaming data.
 decoder = Decoder(config)
 decoder.start_utt()
-stream = open(path.join(DATADIR, 'hello.raw'), 'rb')
+stream = open(path.join(DATADIR, 'hellotest16.wav'), 'rb')
 while True:
   buf = stream.read(1024)
   if buf:
