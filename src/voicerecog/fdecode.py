@@ -7,7 +7,7 @@ from sphinxbase.sphinxbase import *
 MODELDIR = "model"
 DATADIR = "data"
 DICT = input("full or limited dictionary?(full/limited)[limited]: ")
-AFILE = input("file location from {0}".format(DATADIR))
+AFILE = input("file location from '"'{0}'"': ".format(DATADIR))
 
 # Create a decoder with certain model
 config = Decoder.default_config()
