@@ -3,14 +3,22 @@
 
 # Copied by Kevin Cole <kevin.cole@novawebcoop.org> 2016.06.16
 # https://ggulati.wordpress.com/2016/02/24/coding-jarvis-in-python-3-in-2016/
+#
+# Continued development by Marco Sirabella, Sasha Volodin, and Martin Ennis
+#
+# This version of listens for "okay stacy turn[ed] on the defrost"
+# or "okay stacy turn off the defrost" and sets Broadcom pin 24 high
+# or low respectively. In the test version this was hooked up to an
+# LED in series with a 220K resistor.  I think.
+#
 
 import speech_recognition
-import pyttsx
+import pyttsx              # Python Text To Speech X
 import RPi.GPIO as GPIO
 
 # See http://pyttsx.readthedocs.org/en/latest/engine.html#pyttsx.init
 speech_engine = pyttsx.init("espeak")
-speech_engine.setProperty("rate", 150)
+speech_engine.setProperty("rate", 150)  # 15o words per minute
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(24, GPIO.OUT)

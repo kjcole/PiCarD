@@ -3,15 +3,21 @@
 
 # Copied by Kevin Cole <kevin.cole@novawebcoop.org> 2016.06.16
 # https://ggulati.wordpress.com/2016/02/24/coding-jarvis-in-python-3-in-2016/
+#
+# Continued development by Marco Sirabella, Sasha Volodin, and Martin Ennis
+#
+# This version of listens for "okay stacy turn[ed] on the defrost"
+# and responds by buzzing a 440 Hz. tone ad nauseum (until Ctrl-C).
+#
 
 import speech_recognition
-import pyttsx
+import pyttsx              # Python Text To Speech X
 import RPi.GPIO as GPIO
 import time
 
 # See http://pyttsx.readthedocs.org/en/latest/engine.html#pyttsx.init
 speech_engine = pyttsx.init("espeak")
-speech_engine.setProperty("rate", 150)
+speech_engine.setProperty("rate", 150)  # 15o words per minute
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(23, GPIO.OUT)
@@ -41,6 +47,7 @@ def listen():
 
 speak("Say something!")
 words = listen()
+words = words.lower()
 s1 = "okay stacy turn on the defrost"
 s2 = "okay stacy turned on the defrost"
 s3 = "okay stacy turn off the defrost"
