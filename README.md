@@ -15,6 +15,6 @@ Development will PROBABLY be with [Kivy Pie](http://kivypie.mitako.eu/) as
 the base, since the project lead entertains fantasies of controlling it
 remotely from a phone as well.
 
-mjsir911(student) is now a project contributor.
-
-bobtinin(student) is now a project contributor.
+* [Marco Sirabella](https://github.com/mjsir911)(student) is now a project contributor.
+* [Martin Ennis](https://github.com/bobtinin)(student) is now a project contributor.
+* [Sasha Volodin](https://github.com/svolodin14)(student) is now a project contributor.
